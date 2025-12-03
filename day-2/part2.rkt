@@ -3,12 +3,12 @@
 (require racket/file)
 
 (define (invalid? id)
-    (let ([id (number->string id)])
-        (define (test id n) (let* ([prefix (substring id 0 n)]
-                                [k (quotient (string-length id) (string-length prefix))]
-                                [test-string (string-append* (make-list k prefix))])
-                                (string=? test-string id)))
+    (define (test id n) (let* ([prefix (substring id 0 n)]
+                               [k (quotient (string-length id) (string-length prefix))]
+                               [test-string (string-append* (make-list k prefix))])
+                            (string=? test-string id)))
 
+    (let ([id (number->string id)])
         (ormap (lambda (n) (test id n)) (range 1 (+ (quotient (string-length id) 2) 1)))))
 
 (define (invalid-ids ranges)
