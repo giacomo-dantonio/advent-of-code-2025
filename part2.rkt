@@ -11,8 +11,6 @@
 
         (ormap (lambda (n) (test id n)) (range 1 (+ (quotient (string-length id) 2) 1)))))
 
-(define (valid? id) (not (invalid? id)))
-
 (define (invalid-ids ranges)
     (for/fold ([acc '()])
               ([idrange ranges])
