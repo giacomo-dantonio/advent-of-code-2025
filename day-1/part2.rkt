@@ -7,17 +7,17 @@
 ; rotation by using integer division. This, however, doesn't work for negative distances.
 ; To solve the problem I use simmetry to reduce the problem to the positive case.
 (define (update-counter distance dial counter)
-    (define (update-counter-pos distance dial counter)
-            (+ counter (quotient (+ dial distance) 100)))
+  (define (update-counter-pos distance dial counter)
+    (+ counter (quotient (+ dial distance) 100)))
 
-    (if (>= distance 0)
-        (update-counter-pos distance dial counter)
-        (let ([dial (modulo (- 100 dial) 100)]
-              [distance (- distance)])
-            (update-counter-pos dial distance counter)
+  (if (>= distance 0)
+      (update-counter-pos distance dial counter)
+      (let ([dial (modulo (- 100 dial) 100)]
+            [distance (- distance)])
+        (update-counter-pos dial distance counter)
         )
-    )
-)
+      )
+  )
 
 (define (solve rotations start) (solve-base update-counter rotations start))
 

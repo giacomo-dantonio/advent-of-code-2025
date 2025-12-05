@@ -4,8 +4,8 @@
 (require "base.rkt")
 
 (define (update-counter distance dial counter)
-    (let ([dial (modulo (+ dial distance) 100)])
-        (if (= dial 0) (+ counter 1) counter)))
+  (let ([dial (modulo (+ dial distance) 100)])
+    (if (= dial 0) (+ counter 1) counter)))
 
 (define (solve rotations start) (solve-base update-counter rotations start))
 

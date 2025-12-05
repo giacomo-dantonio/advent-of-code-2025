@@ -7,8 +7,8 @@
 (require "base.rkt")
 
 (define (values lines)
-    (define pos (positions lines))
-    (accessible pos))
+  (define pos (positions lines))
+  (accessible pos))
 
 (define (solve lines) (array-all-sum (values lines)))
 
