@@ -38,8 +38,7 @@
         (let-values ([(best buf) (body best buf)])
           (iter best buf))))  ; Tail recursion
 
-  (let* ([reverse-bank (reverse bank)]
-         [buf-length (- (length bank) 12)]
+  (let* ([buf-length (- (length bank) 12)]
          [initial (drop bank buf-length)]
          [buf (reverse (take bank buf-length))])
     (iter initial buf)))
