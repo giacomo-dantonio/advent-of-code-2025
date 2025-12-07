@@ -17,14 +17,14 @@
              [splits 0]
              #:result (values (reverse positions) splits))
             ([(clhs i) (in-indexed lhs)]
-             [crhs rhs]) 
+             [crhs rhs])
     (if (split? clhs crhs)
-      (values
-        (cons (add1 i) (cons (sub1 i) positions))
-        (add1 splits))
-      (values
-        (if (char=? clhs #\|) (cons i positions) positions)
-        splits))))
+        (values
+         (cons (add1 i) (cons (sub1 i) positions))
+         (add1 splits))
+        (values
+         (if (char=? clhs #\|) (cons i positions) positions)
+         splits))))
 
 ; Return the updated line lhs after a move and the number of times,
 ; the tachyon beam has bees split.
@@ -49,5 +49,5 @@
       (printf "~a\n" line)
       (values line (+ splits new-splits)))))
 
-(define lines (file->lines "./day-7/input.example"))
+(define lines (file->lines "./day-7/input"))
 (printf "Solution: ~a\n" (solve lines))

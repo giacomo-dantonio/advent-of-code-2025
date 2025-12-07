@@ -13,7 +13,7 @@
   (for ([line (cdr lines)])
     (for ([(ch i) (in-indexed (string->list line))])
       (when (> (vector-ref partials i) 0)
-        (when (char=? ch #\^) 
+        (when (char=? ch #\^)
           (let [(n (vector-ref partials i))]
             (vector-set! partials (sub1 i) (+ (vector-ref partials (sub1 i)) n))
             (vector-set! partials (add1 i) (+ (vector-ref partials (add1 i)) n))
