@@ -2,24 +2,7 @@
 
 (require data/union-find)
 (require racket/file)
-
-(define (parse-lines lines)
-  (for/list ([line lines])
-    (map string->number (string-split line ","))))
-
-(define (sqr-distance lhs rhs)
-  (for/sum ([a lhs]
-            [b rhs])
-    (sqr (- b a))))
-
-(define (distances points)
-  (sort
-   (for*/list ([(lhs i) (in-indexed points)]
-               [(rhs j) (in-indexed points)]
-               #:when (< i j))
-     (list i j (sqr-distance lhs rhs)))
-   <
-   #:key caddr))
+(require "common.rkt")
 
 (define (circuits points N)
   (define indices (for/vector ([i (range 0 (length points))]) (uf-new i)))
