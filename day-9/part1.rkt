@@ -1,9 +1,7 @@
 #lang racket
 
 (require racket/file)
-
-(define (parse lines)
-  (for/list ([line lines]) (map string->number (string-split line ","))))
+(require "common.rkt")
 
 (define (boxes points)
   (for*/list ([(p i) (in-indexed points)]
