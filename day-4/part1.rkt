@@ -12,5 +12,6 @@
 
 (define (solve lines) (array-all-sum (values lines)))
 
-(define lines (file->lines "./day-4/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "./day-4/input"))
+  (printf "Solution: ~a\n" (solve lines)))

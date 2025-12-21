@@ -28,5 +28,6 @@
   (define-values (fresh _) (process input))
   (length fresh))
 
-(define input (string-trim (file->string "./day-5/input")))
-(printf "Solution: ~a\n" (solve input))
+(module+ main
+  (define input (string-trim (file->string "./day-5/input")))
+  (printf "Solution: ~a\n" (solve input)))

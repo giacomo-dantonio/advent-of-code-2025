@@ -29,5 +29,6 @@
     [(list p q)
      (* (car p) (car q))]))
 
-(define lines (file->lines "./day-8/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "./day-8/input"))
+  (printf "Solution: ~a\n" (solve lines)))

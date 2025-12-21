@@ -22,5 +22,6 @@
   (for/sum [(x partials)] x))
 
 
-(define lines (file->lines "./day-7/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "./day-7/input"))
+  (printf "Solution: ~a\n" (solve lines)))

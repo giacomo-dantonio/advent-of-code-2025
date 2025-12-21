@@ -74,5 +74,6 @@
         
   (apply + solutions))
 
-(define lines (file->lines "./day-10/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "./day-10/input"))
+  (printf "Solution: ~a\n" (solve lines)))

@@ -51,5 +51,6 @@
         [dac-to-out (count-paths graph sorted-nodes "dac" "out")])
     (* svr-to-fft fft-to-dac dac-to-out)))
 
-(define lines (file->lines "./day-11/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "./day-11/input"))
+  (printf "Solution: ~a\n" (solve lines)))

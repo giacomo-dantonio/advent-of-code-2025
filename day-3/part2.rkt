@@ -50,5 +50,6 @@
 
   (apply + joltages))
 
-(define banks (file->lines "./day-3/input"))
-(printf "Solution: ~a\n" (solve banks))
+(module+ main
+  (define banks (file->lines "./day-3/input"))
+  (printf "Solution: ~a\n" (solve banks)))

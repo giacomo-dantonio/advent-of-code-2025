@@ -12,6 +12,6 @@
 (define rotations (file->lines "./day-1/input"))
 (define start 50)  ; The dial starts by pointing at 50.
 
-(define-values (dial resets) (solve rotations start))
-
-(printf "dial: ~a\t resets: ~a\n" dial resets)
+(module+ main
+  (define-values (dial resets) (solve rotations start))
+  (printf "dial: ~a\t resets: ~a\n" dial resets))

@@ -29,5 +29,6 @@
     (sort (map length circus) >))
   (apply * (take circuit-lengths 3)))
 
-(define lines (file->lines "./day-8/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "./day-8/input"))
+  (printf "Solution: ~a\n" (solve lines)))

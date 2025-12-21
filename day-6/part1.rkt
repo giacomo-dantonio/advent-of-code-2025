@@ -30,5 +30,6 @@
 (define (solve lines)
   (apply + (results lines)))
 
-(define lines (file->lines "./day-6/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "./day-6/input"))
+  (printf "Solution: ~a\n" (solve lines)))

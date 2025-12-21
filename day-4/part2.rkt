@@ -19,5 +19,6 @@
   (define pos (positions lines))
   (iter pos 0 1))
 
-(define lines (file->lines "./day-4/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "./day-4/input"))
+  (printf "Solution: ~a\n" (solve lines)))

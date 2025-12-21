@@ -37,5 +37,6 @@
   (define edges (parse lines))
   (length (paths edges "you" "out")))
 
-(define lines (file->lines "./day-11/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "./day-11/input"))
+  (printf "Solution: ~a\n" (solve lines)))

@@ -42,4 +42,5 @@
 (define ranges
   (for/list ([range (string-split db ",")]) (string-split range "-")))
 
-(printf "Solution: ~a\n" (solve ranges))
+(module+ main
+  (printf "Solution: ~a\n" (solve ranges)))

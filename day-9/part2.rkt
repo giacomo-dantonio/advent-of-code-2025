@@ -147,5 +147,6 @@
   (define points (parse lines))
   (draw points))
 
-(define lines (file->lines "./day-9/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "./day-9/input"))
+  (printf "Solution: ~a\n" (solve lines)))

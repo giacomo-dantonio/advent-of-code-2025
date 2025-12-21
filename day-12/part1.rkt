@@ -64,5 +64,6 @@
 
   (count identity checks))
 
-(define lines (file->lines "day-12/input"))
-(printf "Solution: ~a\n" (solve lines))
+(module+ main
+  (define lines (file->lines "day-12/input"))
+  (printf "Solution: ~a\n" (solve lines)))
